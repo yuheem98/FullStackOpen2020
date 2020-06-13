@@ -1,0 +1,32 @@
+websequencediagrams.com text file
+Title New Note AJAX
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over Browser: 
+Data sent as body of POST request
+end note
+note over Server: 
+Access data and create new note object
+end note
+Server-->Browser: HTTP status code 302: URL redirect
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server-->Browser: HTML-code
+note over Browser: 
+Browser reloads the notes page
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server->Browser: main.js
+note over Browser: 
+Browser starts executing main.js that requests JSON data from the server
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: data.json
+note over Browser: 
+Browser executes the event handler that renders notes to display
+end note
+
+
+
+
