@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 const App = () => {
   const course = 'Half Stack application development'
+<<<<<<< HEAD
   const parts = [
     {
       name: 'Fundementals of React',
@@ -17,12 +18,32 @@ const App = () => {
       exercises: 14
     }
   ]
+=======
+  const part1 = {
+    name: 'Fundementals of React',
+    exercises: 10
+  }
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7
+  } 
+  const part3 = {
+    name: 'State of a component',
+    exercises: 14
+  }
+>>>>>>> ff9df5607fc3830f2448d63453ad2a9f9093dfa4
 
   return (
     <>
       <Header course={course} />
+<<<<<<< HEAD
       <Content parts={parts} />
       <Total parts={parts} />
+=======
+      <Content p1={part1.name} p2={part2.name} p3={part3.name} 
+        ex1={part1.exercises} ex2={part2.exercises} ex3={part3.exercises} />
+      <Total ex1={part1.exercises} ex2={part3.exercises} ex3={part3.exercises} />
+>>>>>>> ff9df5607fc3830f2448d63453ad2a9f9093dfa4
     </>
   )
 }
