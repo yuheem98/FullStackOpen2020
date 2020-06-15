@@ -12,7 +12,10 @@ const FeedbackButton = ({ handleClick, type }) => (
 )
 
 const Statistic = ({ text, value}) => (  
-  <p>{text} {value}</p>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
 )
 
 const Statistics = ({ good, neutral, bad }) => {
@@ -29,14 +32,16 @@ const Statistics = ({ good, neutral, bad }) => {
   }
 
   return (
-    <div>
-      <Statistic text='good' value={good} />
-      <Statistic text='neutral' value={neutral} />
-      <Statistic text='bad' value={bad} />
-      <Statistic text='all' value={total} />
-      <Statistic text='average' value={average} />
-      <Statistic text='positive' value={positive} />
-    </div>
+    <table>
+      <tbody>
+        <Statistic text='good' value={good} />
+        <Statistic text='neutral' value={neutral} />
+        <Statistic text='bad' value={bad} />
+        <Statistic text='all' value={total} />
+        <Statistic text='average' value={average} />
+        <Statistic text='positive' value={positive} />
+      </tbody>
+    </table>
   )
 }
 
