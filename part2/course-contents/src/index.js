@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Header = ({ course }) => {
+const CourseHeader = ({ course }) => {
   return (
-    <h1>{course.name}</h1>
+    <h2>{course.name}</h2>
   )
 }
 
@@ -19,7 +19,7 @@ const Content = ({ course }) => {
   return (
     <div>
       {course.parts.map(part =>
-      <Part key={part.id} part={course.parts[part.id - 1]} />
+        <Part key={part.id} part={course.parts[part.id - 1]} />
       )}
     </div>
   )
@@ -37,42 +37,70 @@ const Total = ({ course }) => {
 
 const Course = ({ course }) => {
   return (
-    <>
-      <Header course={course} />
+    <div>
+      <CourseHeader course={course} />
       <Content course={course} />
       <Total course={course} />
-    </>
+    </div>
   )
 }
 
-const App = () => {
-  const course = {
-    id: 1,
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of eact',
-        exercises: 10,
-        id: 1
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7,
-        id: 2
-      },
-      {
-        name: 'State of a component',
-        exercises: 14,
-        id: 3
-      },
-      { name: 'Redux',
-        exercises: 11,
-        id: 4
-      }
-    ]
-  }
+const Curriculum = ({ courses }) => { 
+  return (
+    <div>
+      <h1>Web development curriculum</h1>
+      {courses.map(course => 
+      <Course key={course.id} course={course} />
+      )} 
+    </div>
+    )
+}
 
-  return <Course course={course} />
+const App = () => {
+  const courses = [
+    {
+      name: 'Half Stack application development',
+      id: 1,
+      parts: [
+        {
+          name: 'Fundamentals of eact',
+          exercises: 10,
+          id: 1
+        },
+        {
+          name: 'Using props to pass data',
+          exercises: 7,
+          id: 2
+        },
+        {
+          name: 'State of a component',
+          exercises: 14,
+          id: 3
+        },
+        { name: 'Redux',
+          exercises: 11,
+          id: 4
+        }
+      ]
+    },
+    {
+      name: 'Node.js',
+      id: 2,
+      parts: [
+        {
+          name: 'Routing',
+          exercises: 3,
+          id: 1
+        },
+        {
+          name: 'Middlewars',
+          exercises: 7,
+          id:2
+        }
+      ]
+    }
+  ] 
+  return <Curriculum courses={courses} />
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
