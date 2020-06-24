@@ -12,6 +12,9 @@ const PersonForm = ({ personHandler,
     <div>
       Number:<input value={number} onChange={numberHandler} />
     </div>
+    <div>
+      <button type='submit'>add</button>
+    </div>
   </form>
 )
 
