@@ -2,38 +2,18 @@
   "persons": [
     {
       "name": "Arto Hellas",
-      "number": "040-123456",
+      "number": "9324 1236",
       "id": 1
     },
     {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
+      "name": "Jackie Love",
+      "number": "9143 0139",
       "id": 2
     },
     {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
+      "name": "Linda Boo",
+      "number": "9098 1329",
       "id": 3
-    },
-    {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
-      "id": 4
-    },
-    {
-      "name": "Daniel Lee",
-      "number": "9338 0931",
-      "id": 5
-    },
-    {
-      "name": "Joshua Lai",
-      "number": "8037 1280",
-      "id": 6
-    },
-    {
-      "name": "Mary Chua",
-      "number": "8455 1254",
-      "id": 7
     }
   ]
 }
