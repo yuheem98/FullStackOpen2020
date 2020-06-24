@@ -22,7 +22,23 @@ const App = () => {
     event.preventDefault()
     if (persons.reduce((acc, person) => 
       acc || person.name === newName, false)) {
-      alert(`${newName} is already added to phonebook`)
+      const message =
+        `${newName} is already added to phonebook, 
+        replace the old number with a new one?`
+
+      if (window.confirm(message)) {
+        const person = persons.find(person => person.name === newName)
+        const id = person.id
+        const updatedPerson = { ...person, number: newNumber }
+
+        personService
+          .update(id, updatedPerson)
+          .then(returnedPerson => {
+            setPersons(persons.map(person => 
+              person.id !== id ? person : returnedPerson))
+          })
+      }
+
     } else {
       const newPerson = {
         name: newName,
